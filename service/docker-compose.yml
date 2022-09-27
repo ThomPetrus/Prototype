@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  prototype:
+    platform: linux/x86_64
+    build:
+      context: ..
+      args:
+        JAR_FILE: prototype.jar
+    ports:
+      - "8010:8010"
+    networks:
+      - default
+    environment:
+      logging.level.org.springframework: INFO
+      server.port: 8010
+      spring.profiles.active: local
