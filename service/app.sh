@@ -10,6 +10,7 @@ show_help() {
 }
 
 deploy() {
+  mvn clean package
   aws ecr get-login-password | docker login --username AWS --password-stdin 842924693656.dkr.ecr.us-west-2.amazonaws.com
   docker build -t motive .
   docker tag motive:latest 842924693656.dkr.ecr.us-west-2.amazonaws.com/motive/prototype:latest

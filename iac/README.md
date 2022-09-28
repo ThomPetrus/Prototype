@@ -16,4 +16,15 @@ It is a [Maven](https://maven.apache.org/) based project, so you can open this p
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
+
+Deploying Prototype
+---
+```
+# deploy image to ECR
+cd /service && ./app.sh deploy-ecr
+
+# deploy infra using image from ECR
+cd /iac && ./iac.sh deploy 
+```
+
 Enjoy!
